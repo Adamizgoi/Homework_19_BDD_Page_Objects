@@ -24,7 +24,7 @@ public class AppIbankDashboardTest {
 
     @BeforeEach
     void setUp() {
-        Configuration.headless=true;
+        //Configuration.headless=true;
         open("http://localhost:9999/");
     }
 
@@ -116,8 +116,7 @@ public class AppIbankDashboardTest {
     void shouldNotTransferWithEmptySumFieldToFirstCard() throws RuntimeException {
         loginSuccessful(user);
         verifyUser();
-        assertThrows(RuntimeException.class, () -> {
-            transferErrorEmptySumToFirstCard();
+        assertThrows(RuntimeException.class, () -> {transferErrorEmptySumToFirstCard();
         });
     }
 
